@@ -1,0 +1,2 @@
+# Personal Portofolio Website With CRUD & Login System
+Personally I want to create this website to practice again about Flask and Flask Login, but I need solid idea so my app will be useful for me in the future as part of my portofolio or my personal CV.

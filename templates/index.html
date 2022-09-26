@@ -10,19 +10,42 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body style="background-color: #354230;">
-    <header class="d-flex justify-content-between p-3" style="background-color: #1c352d;">
+<body style="background-color: #1b1c1e;">
+    <header class="d-flex justify-content-between p-3" style="background-color: #303030;">
         <p class="display-6 fs-2 mb-0 text-light">Welcome To My Website</p>
         <a href="#" class="btn btn-light">Login</a>
     </header>
     <div class="container text-light">
-        <div class="profile d-flex justify-content-evenly py-5">
-            <div class="image">
-                <img src="{{url_for('static', filename='img/foto diri.png') }}" alt="" class="w-50 rounded-circle mx-auto d-block">
+        <div class="profile d-flex justify-content-evenly align-items-center py-5">
+            <div>
+                <img src="{{url_for('static', filename='img/foto diri.png') }}" alt=""
+                    class="w-50 rounded-circle mx-auto d-block">
             </div>
-            <div class="profile w-50 flex-grow-1 p-3 rounded-2" style="background-color: #043927;">
-                <div class="fs-3">Personal Information</div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veniam aperiam vel voluptates beatae recusandae voluptas maiores delectus animi sit.
+            <div class="profile w-50 flex-grow-1 p-3"
+                style="background-color: #2b2b2b; border-radius: 28px; border: 4px solid #414141;">
+                <div class="fs-3 fw-bolder">Personal Information</div><br>
+                <div class="row">
+                    <div class="col-9">
+                        <table>
+                            <tr>
+                                <td class="fs-5">Name</td>
+                                <td class="fs-5">: Rizal Widyananda</td>
+                            </tr>
+                            <tr>
+                                <td class="fs-5">Birth of Date</td>
+                                <td class="fs-5">: 11 November 2000</td>
+                            </tr>
+                            <tr>
+                                <td class="fs-5">List of Interest</td>
+                                <td class="fs-5">: Python Programming, Machine Learning, Deep Learning, Automation, Web Scraping, etc</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-3">
+                        <div class="fs-5 text-center">Short Description</div>
+                        <div class="fs-6 text-center">I am data & Python enthusiast, especially in Machine Learning (ML) field and automation field.</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

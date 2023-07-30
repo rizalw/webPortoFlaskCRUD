@@ -16,9 +16,10 @@ login_manager = flask_login.LoginManager()
 
 # Initiate app
 app = Flask(__name__)
-secret = open("secret.txt", "r")
-print(secret.read())
-app.secret_key = secret.read()
+with open("secret.txt", "r") as secret:
+    text = secret.read()
+    print(text)
+    app.secret_key = text
 
 # Connect flask_login to the main app
 login_manager.init_app(app)
@@ -59,6 +60,11 @@ def request_loader(request):
 @app.route("/")
 def index():
     return render_template("index.html", current_user = flask_login.current_user)
+
+@app.route("/admin")
+@flask_login.login_required
+def admin():
+    return render_template("admin.html", current_user = flask_login.current_user, list_users = users)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

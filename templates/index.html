@@ -35,7 +35,12 @@
             </li>
             <li>Simple CRUD System
                 <ul>
-                    <li>Using Star Scheme</li>
+                    <li>Using Star Scheme (Avaiable after login using your account)</li>
+                    {% if current_user.is_authenticated %}
+                    <li>
+                        <a href="/admin" class="text-light">Click here</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </li>
         </ol>

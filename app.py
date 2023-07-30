@@ -16,7 +16,9 @@ login_manager = flask_login.LoginManager()
 
 # Initiate app
 app = Flask(__name__)
-app.secret_key = 'OnlyIKnowThis'  # Change this!
+secret = open("secret.txt", "r")
+print(secret.read())
+app.secret_key = secret.read()
 
 # Connect flask_login to the main app
 login_manager.init_app(app)

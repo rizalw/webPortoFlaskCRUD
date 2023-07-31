@@ -66,16 +66,19 @@ def index():
 def admin():
     return render_template("admin.html", current_user = flask_login.current_user, list_users = users)
 
+@app.route("/registration", methods=['POST'])
+@flask_login.login_required
+def registration():
+    email = request.form['email']
+    password = request.form['password']
+    script = "INSERT INTO accounts (email, password) VALUES ('{}', '{}');".format(email, password)
+    cursor.execute(script)
+    return redirect(url_for('admin'))
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return '''
-               <form action='login' method='POST'>
-                <input type='text' name='email' id='email' placeholder='email'/>
-                <input type='password' name='password' id='password' placeholder='password'/>
-                <input type='submit' name='submit'/>
-               </form>
-               '''
+        return render_template("login.html")
 
     email = request.form['email']
     if email in users and request.form['password'] == users[email]['password']:
